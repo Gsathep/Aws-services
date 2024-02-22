@@ -1,0 +1,51 @@
+plugins {
+	id 'java'
+	id 'org.springframework.boot' version '3.2.0'
+	id 'io.spring.dependency-management' version '1.1.4'
+
+}
+
+group = 'com.demo'
+version = '0.0.1-SNAPSHOT'
+
+java {
+	sourceCompatibility = '17'
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+	implementation 'org.projectlombok:lombok:1.18.28'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+	testImplementation 'org.projectlombok:lombok:1.18.28'
+	//this sns text textmessage
+		implementation 'com.amazonaws:aws-java-sdk-s3:1.12.141'
+		implementation 'com.amazonaws:aws-java-sdk-sns:1.12.319'
+
+
+	// other dependencies...this email
+		implementation 'org.springframework.boot:spring-boot-starter-mail'
+		implementation 'org.springframework.cloud:spring-cloud-aws:2.2.6.RELEASE'
+		implementation 'io.awspring.cloud:spring-cloud-starter-aws-ses:2.3.3'
+	implementation 'org.springframework.boot:spring-boot-starter'
+	implementation 'io.awspring.cloud:spring-cloud-starter-aws-ses:2.3.3'
+
+	//pinpoint notification service
+	implementation 'software.amazon.awssdk:aws-sdk-java:2.22.2'
+	implementation 'software.amazon.awssdk:pinpoint:2.20.162'
+
+
+}
+
+
+
+
+
+
+
+tasks.named('test') {
+	useJUnitPlatform()
+}
